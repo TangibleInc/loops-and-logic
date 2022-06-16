@@ -1,0 +1,543 @@
+
+== History ==
+
+= 1.2.8 =
+
+Release Date: 2021-07-20
+
+- Add template include filter for Layout templates
+- Prepare interface for third-party integrations, including Loops & Logic Pro
+- ACF "editor" field type (WYSIWYG): Format field value by default
+
+= 1.2.7 =
+
+Release Date: 2021-07-16
+
+- Simplify logic to reliably prevent infinite loop for default loop context and post content in general
+
+= 1.2.6 =
+
+Release Date: 2021-07-10
+
+- Loop module: Improve logic to prevent infinite loop, when using default loop context (global $wp_query)
+- Gutenberg and Elementor integration: Improve handling template style/script
+
+= 1.2.3 =
+
+Release Date: 2021-07-01
+
+- If tag: Add ACF field type conditions, such as acf_checkbox, acf_relationship, etc.
+- Taxonomy and taxonomy term loop: Improve sort by custom field
+
+= 1.2.1 =
+
+Release Date: 2021-06-30
+
+- Taxonomy term loop: Add query parameters "hide_empty", "orderby_field", "orderby_field_number"; Add field "count"
+- Template post types: Add "name" field (post slug) in admin edit screen and Template tag
+- Template tag: Add "theme" attribute to load theme templates: sidebar, search, and part
+- Layout post type: Add "Theme parts" settings to load alternate header or footer
+- Loop tag: Add logic to prevent infinite loop when a post loads itself; Improve handling default loop context (global $wp_query) when used without "type" attribute, especially in the context of Beaver template and layout
+
+= 1.2.0 =
+
+Release Date: 2021-06-22
+
+- Add ACF field type "Tangible Template" (under Content section)
+- Add template types Style, Script, and Layout, with theme location rules builder
+- Gutenberg, Elementor, Beaver Builder: Add ability to select from saved templates
+- Field tag: Add attributes "template" and "acf_template" to render Template field
+- If tag: Add conditions for main query: "singular" and "archive" (category, tag, taxonomy, post, author, and date)
+- If tag: Add common operators "in" and "not_in" to check if value is in given list
+- Template tag: Add attribute "type" for layout, style, script, block
+
+= 1.1.8 =
+
+Release Date: 2021-06-10
+
+- Attachment Loop: Add fields "srcset" and "sizes" for responsive image attributes
+  - For featured image in post loop, the field names are "image_srcset" and "image_sizes"
+- Field tag: Add attribute "item" to get an item from a list, using index starting with 1
+- Meta tag: Support "viewport" attribute
+
+= 1.1.6 =
+
+Release Date: 2021-06-02
+
+- Chart tag: Add options chart_title, chart_legend, axis_x, axis_y
+- HTML module: Improve handling JSON object and array in tag attributes
+- Template shortcode: Support passing template as inner content
+
+= 1.1.3 =
+
+Release Date: 2021-05-21
+
+- Publish to WordPress plugin directory
+
+
+== Pre-History ==
+
+Old versions before publishing to WP plugin directory
+
+= 1.1.2 =
+
+Release Date: 2021-05-17
+
+- Add template post type action "Copy to new draft"
+- Remove PHP short tags
+
+= 1.1.1 =
+
+Release Date: 2021-05-15
+
+- Prepare for WordPress plugin repository
+  - Improve plugin welcome screen, description page, tags
+  - Add "Stable tag" to readme.txt with specific version
+  - Sanitize template post fields on save
+  - Remove PHP short tags
+  - Remove plugin update checker by using Git branch "variant/without-updater" of plugin framework
+
+= 1.1.0 =
+
+Release Date: 2021-05-14
+
+- Start Chart tag
+- Use generic "post" loop type if default WP query returns multiple post types
+
+= 1.0.7 =
+
+Release Date: 2021-04-27
+
+- Link: Improve handling of page anchor for current page
+- Post loop: Add field "menu_order"
+
+= 1.0.6 =
+
+Release Date: 2021-04-16
+
+- Meta tag: Add shortcuts for title, description, image
+- Add support for id=current in core loop types: Post (and custom post type), taxonomy term, user
+- Post loop: Make fallback excerpt optional with auto=true; Improve generation of fallback excerpt; Add attributes "words" and "more"
+- Date tag: Add attribute "timestamp" as shortcut to format attribute value (or tag content) as timestamp; Add support for values "start_of_day" and "end_of_day"
+
+= 1.0.5 =
+
+Release Date: 2021-04-08
+
+- Link
+  - Improve handling of URL protocol such as "tel"
+  - If "href" attribute is telephone number, ensure valid HTML by replacing spaces with dashes
+- Format, Field tags: Add attribute "replace" and "with" for string replacement
+
+= 1.0.3 =
+
+Release Date: 2021-03-26
+
+- Support query parameters "count" and "offset" for all loop types
+- Template post type: Add Style/Script fields that enqueue once per template
+- Template editor: Update CodeMirror, with better default options; Improve JS/CSS/SCSS lint rules; Improve handling tab with multiple editor instances
+
+= 1.0.0 =
+
+Release Date: 2021-03-15
+
+- Slider: Support loop option with multiple items per slide
+- Beaver integration: Solve Beaver's CSS styles interfering with Template editor on settings panel float
+- Paginator: Use class instead of data attribute for faster query of subscribers
+- Add Switch/When tags - Shortcut to generate a series of If/Else conditions
+
+= 0.9.9 =
+
+Release Date: 2021-03-11
+
+- Post loop
+  - For orderby "menu_order", default order is descending for expected order
+  - Add field "edit_url"
+- Add Redirect tag
+- Improve support for "count" attribute with field loops, including ACF repeater and flexible content
+- Get tag: Add shortcut to get loop variables from a field, using "field", "acf_repeater", etc.
+- Shortcode tag: Ensure attribute values are rendered
+
+= 0.9.8 =
+
+Release Date: 2021-02-16
+
+- Add Template tag and shortcode: Render a template post by ID or title
+- Add Shortcode tag
+  - Render shortcodes inside a template
+  - Add parameter "render" to control if/when dynamic tags in inner content are rendered
+- Embed tag: Improve responsive behavior for non-iframe embeds such as audio player
+- Add HelpScout button in plugin settings screen for live support
+
+= 0.9.7 =
+
+Release Date: 2021-01-29
+
+- Template editor
+  - Update CodeMirror and its modules
+  - Update HTML Lint rules to accept attributes starting with uppercase
+- Taxonomy term loop
+  - Add field "url" for term archive
+  - Improve support for hierarchical terms
+    - Add query parameter "parent" to get terms by its parent term's ID or slug
+    - Add query "parents=true" to get top-level parent terms only
+    - Add field "children" to get child terms of current term
+    - Add field "ancestors" to get ancestor terms (parent and their parents) of current term
+- Post loop
+  - Improve support for hierarchical posts
+    - Improve query parameter "parent" and "children"
+    - Add field "ancestors" to get ancestor posts
+
+= 0.9.6 =
+
+Release Date: 2021-01-27
+
+- Support offset and count to modify main query from URL
+- Divi integration: Tangible Template widget - Work in progress
+
+= 0.9.5 =
+
+Release Date: 2021-01-19
+
+- Elementor integration: Tangible Template widget
+- Slider tag: Add options "items" and "responsive" to show multiple item per page like a carousel
+- Field and Loop tag: Add attribute from=options to get fields from ACF options pages
+
+= 0.9.4 =
+
+Release Date: 2021-01-13
+
+- Date tag
+  - Always use default timezone from site settings
+  - Add attributes timezone, ago, add, subtract
+- Add support for ACF Link field type
+- Improve styling for template editor in Beaver Builder
+
+= 0.9.3 =
+
+Release Date: 2020-12-23
+
+- Base loop: Implement custom sort by field, integrated with pagination and offset
+- Loop paginator: Rewrite front/backend logic to support large number of pages with custom sort and pagination
+- Slider
+  - Add options: auto, loop, drag, controls, pager, speed, pause
+  - Improve default options when one or zero slides
+- ACF gallery field: Add option `count` to limit number of images
+
+= 0.9.1 =
+
+Release Date: 2020-12-17
+
+- Support getting currently queried object of an archive page as field loop: archive_author, archive_term, archive_post_type
+- ACF integration: Support repeater and flexible content field types for non-posts (user and taxonomy term)
+
+= 0.9.0 =
+
+Release Date: 2020-12-14
+
+- Field tag: Support ACF field types for taxonomy terms
+- Field tag: Improve handling of ACF date and date-time fields to support any return value
+- Slider module: Adaptive height false by default
+- Start dynamic module loader to support when page builders fetch and insert HTML that requires scripts and styles
+- Links: Set site root as base URL if outside of views template context
+- Post loop: For parent and image fields, ensure current post of $wp_query
+
+= 0.8.7 =
+
+Release Date: 2020-12-07
+
+- Start welcome page for plugin onboarding
+- Performance optimization of HTML parse and render
+- Embed tag: Responsive by default
+- Date tag: Add attribute "all_locale" to get/set default locale for subsequent use of Date tag
+- Site tag: For variable type "site", such as name and description
+- Improve support for absolute or relative route for link and image URLs
+- ACF field group: Ensure unique and static name on registration
+
+= 0.8.6 =
+
+Release Date: 2020-11-26
+
+- Table module
+  - Support template when table is empty
+  - Improve sort/filter by column values
+  - Refactor pagination algorithm to improve UI for large number of pages
+
+= 0.8.3 =
+
+Release Date: 2020-11-17
+
+- Taxonomy term loop: Add field parent as loop instance; Update fields definition
+- Taxonomy loop: Add work-around for WP core issue with getting taxonomies by name, if it was registered with multiple post types; see https://core.trac.wordpress.org/ticket/27918
+- For Tangible Views theme, improve handling relative URLs and enqueue in link and script tags
+
+= 0.8.1 =
+
+Release Date: 2020-11-06
+
+- Date tag: Improve error handling; Support operations: set/get locale, add, subtract, ago, duration
+- Table tag
+  - Support template for when table is empty
+  - Add/remove class during fetch data, for styling purpose
+  - Improve horizontal overflow container
+- Calendar loop types: quarter, month, week, weekday, day
+- Base loop: Support extended sort by field
+
+= 0.7.8 =
+
+Release Date: 2020-10-15
+
+- AJAX module: Improve behavior when no other Tangible scripts are loaded
+
+= 0.7.7 =
+
+Release Date: 2020-10-14
+
+- If tag: Add list attribute to check if list is not empty
+- List tag: Support first argument as shortcut for name
+- List and Map tags: Support passing JSON string
+- Loop and Field tags: Improve support for getting field of list and map
+
+= 0.7.5 =
+
+Release Date: 2020-10-06
+
+- Format tag: Add uppercase, lowercase, capital, capital_words
+- If tag
+  - Evaluate logic variable type for complex conditions
+  - Add attribute any=true, to combine conditions as OR statement
+- Loop tag: Improve support for default loop context from $wp_query
+- Post loop - Add fields:
+  - publish_date - Publish date
+  - modify_date - Modify date
+  - post_class - Post classes - See https://developer.wordpress.org/reference/functions/post_class/
+- Table module: Dynamic table with sort/filter/pagination via AJAX
+
+= 0.7.1 =
+
+Release Date: 2020-09-16
+
+- Taxonomy term loop: Improve support for custom taxonomies
+- Conditional logic UI and If tag
+  - Support extending existing rule
+  - Improve show/hide available values based on selected operand
+- Integrate Interface modules: Slider and Glider (fullscreen gallery slider)
+
+= 0.6.7 =
+
+Release Date: 2020-09-14
+
+- Loop tag: Add attribute "times" to repeat X times (a list loop of indexes starting from 1)
+- Load tag: Improve handling style/script path and URL
+- Field group: Improve handling location rule groups
+- File field: Support option "extensions" to limit accepted file extensions
+- Improve support for ACF field types: select, multi-select, date, date-time, editor, post, flexible
+- Loop and Field tags: Add shortcut "user" for user field
+- User loop: Improve handling filtered fields
+
+= 0.6.2 =
+
+Release Date: 2020-09-10
+
+- Advanced Custom Fields integration: Support all field types
+- Support content structure templates in Tangible Views theme
+  - Content types
+  - Field groups
+  - Taxonomies
+- Improve support for templates and module scripts/styles on admin side
+
+= 0.6.1 =
+
+Release Date: 2020-09-08
+
+- Start content structure tags: create post types, field groups, taxonomies, user roles
+- Support template lifecycle actions on admin side
+- Map tag: Add shortcut attributes for list and map
+- Improve code editor styling
+
+= 0.6.0 =
+
+Release Date: 2020-09-03
+
+- Template post type with code editor
+- Add Template tag
+
+= 0.5.9 =
+
+Release Date: 2020-09-02
+
+- Loop module
+  - Post loop
+    - Query by author, category, tag, taxonomy
+    - Query by publish date and date field
+    - Seach by keyword
+    - Order by field, id, author, title, name, type, date, modified, random, comments, relevance, menu
+  - Taxonomy and TaxonomyTerm loop: queries and fields
+- Template module
+  - Improve route matching logic with wildcards "*" (single route) and "**" (multiple routes)
+  - Route tag: Support negative index to get last part(s) of route with the "~" operator
+  - Add Setting tag; Add variable type "setting" for site settings
+
+= 0.5.4 =
+
+Release Date: 2020-08-24
+
+- Update dependencies
+- Include Tangible Interface module for further integration: date picker, sortable, table
+
+= 0.5.2 =
+
+Release Date: 2020-08-15
+
+- Add Meta tag for SEO meta: title, author, description, image
+- Post loop: Support passing WP_Query instance directly
+- Beaver template module: Improve editor styling
+- Plugin framework: Theme updater for use by Tangible Views theme
+
+= 0.4.8 =
+
+Release Date: 2020-08-08
+
+- Logic
+  - Add route conditions
+  - Compare correct value for ends_with
+  - Add comparisons for arrays - any_starts_with, all_starts_with, any_end_with, all_end_with
+- Add tag Shortcode
+
+= 0.4.6 =
+
+Release Date: 2020-08-04
+
+- Beaver Builder integration: Use Tangible CodeMirror editor for Template module
+
+= 0.4.5 =
+
+Release Date: 2020-08-03
+
+- Field tag: Support attributes for loop type fields, like user=full_name
+- Loop tag: Support user_field attribute; Improve support for attributes that get same loop type as its name
+- Get/Set tags: Trim string value by default upon set
+- Improve support for fields that return a loop instance
+- Variable type template: Add attribute `render=false` to allow displaying template as is
+- Prism module: Add attribute `render`, to show rendered result as code block
+- Improve loop paginator
+
+= 0.4.2 =
+
+Release Date: 2020-07-31
+
+- Post loop
+  - Support fields of a loop instance: author, parent, children, image
+  - Improve field excerpt to accept parameters
+- Field and field keys loop: Support fields of a loop instance
+- Attachment loop: Refactor based on post loop
+- If tag: Compare "exists" checks for empty loop instance
+- Start loop type `taxonomy_term`
+- Url tag
+  - Support `query` attribute
+  - child_theme, network_admin, network_site, network_home
+- Path tag: Support current `file` and `folder` for templates
+- Route tag: Support getting parts between x~y; Support setting response status code
+
+= 0.3.7 =
+
+Release Date: 2020-07-28
+
+- Improve getting default loop context from WP_Query
+- If tag: Support "if not loop exists"
+- Post loop: include/exclude, ID, name, parent, children
+- User loop: Support value "current" for id, include, exclude
+- Route variable type: Support getting route part as x, ~x, or x~
+
+= 0.3.4 =
+
+Release Date: 2020-07-25
+
+- Logic: Add user_field condition and evaluator
+- Load tag: Fix handling of absolute paths on Windows
+- All core loop types now support extended fields
+
+= 0.2.9 =
+
+Release Date: 2020-07-16
+
+- Organize and improve core logic rules
+- Improve logic UI integration
+- Add variable type "loop": count, total, previous_total
+- Add variable type "logic": Get and set compound conditions
+- Markdown: Support setting element attributes
+- If tag: Support nested contexts for "If loop exists"
+- Field tag
+  - Cast boolean to a string that works with If tag
+  - Add format attribute
+
+= 0.2.4 =
+
+Release Date: 2020-07-10
+
+- Logic module: Add categories for rules
+- Template module: Organize core conditional rules
+
+= 0.2.3 =
+
+Release Date: 2020-07-07
+
+- Loop module
+  - Add loop type field_keys, a loop of key-value pairs from field
+  - Base and list loop: Improve handling empty item
+- Template module
+  - Loop tag: Add type field_keys
+  - If tag: Add comparisons starts_with, ends_with, includes, not_includes
+  - Load tag: Support absolute path (starting with "/", from template folder root) and relative path (based on current template path)
+  - Load tag: Add support for Human JSON
+  - List and Map: Add attribute "load" to get list/map from JSON file
+  - Link and Route: Support absolute and relative paths
+- Plugin framework
+  - Add module for Human JSON - https://hjson.github.io
+  - Add plugin methods get_missing_dependencies, has_all_dependencies
+
+= 0.2.1 =
+
+Release Date: 2020-07-03
+
+- Loop module
+  - Improving coverage of core content types and fields
+  - Improved loop types: list, map, and map_keys
+- Logic module
+  - Improving tests
+- Template module
+  - Template editor
+  - Template block for Gutenberg
+- Plugin framework
+  - Preact module
+  - Tester moduler for server and client side tests
+
+= 0.1.6 =
+
+Release Date: 2020-06-17
+
+- Update dependencies
+
+= 0.1.5 =
+
+Release Date: 2020-06-01
+
+- Loop types: list, object, field
+
+= 0.1.4 =
+
+Release Date: 2020-05-26
+
+- Organize Loop, Logic, Date, HTML, Template modules
+
+= 0.0.2 =
+
+Release Date: 2019-12-30
+
+- Add Gutenberg integration; Start Template block
+
+= 0.0.1 =
+
+Release Date: 2019-12-21
+
+- Initial release
