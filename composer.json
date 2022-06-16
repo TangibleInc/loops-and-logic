@@ -11,7 +11,7 @@
   ],
   "require": {
     "tangible/plugin-framework": "dev-variant/without-updater",
-    "tangible/template-system": "dev-master"
+    "tangible/template-system": "dev-main"
   },
   "require-dev": {},
   "minimum-stability": "dev"
