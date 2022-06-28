@@ -6,7 +6,7 @@
     },
     {
       "type": "vcs",
-      "url": "git@bitbucket.org:/tangibleinc/tangible-template-system-module.git"
+      "url": "git@bitbucket.org:/tangibleinc/template-system.git"
     }
   ],
   "require": {
