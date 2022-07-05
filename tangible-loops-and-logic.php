@@ -43,13 +43,14 @@ add_action('plugins_loaded', function() {
 
   tangible_loops_and_logic( $plugin );
 
+  // Features loaded will have in their local scope: $framework, $plugin, ...
 
-  // Features loaded will have in their local scope: $framework, $plugin, $loop, $logic, $interface, $html
+  $template_system = tangible_template_system();
 
-  $loop       = tangible_loop();
-  $logic      = tangible_logic();
-  $interface  = tangible_interface();
-  $html       = tangible_template();
+  $loop      = $template_system->loop;
+  $logic     = $template_system->logic;
+  $html      = $template_system->html;
+  $interface = $template_system->interface;
 
   require_once __DIR__.'/includes/index.php';
 

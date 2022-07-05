@@ -1,4 +1,7 @@
 module.exports = {
-  build: [
+  build: [],
+  format: [
+    '**/*.{php,js,json,scss}',
+    '!assets/build'
   ]
 }

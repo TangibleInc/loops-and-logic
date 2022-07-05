@@ -8,7 +8,7 @@ $plugin->register_settings([
     ?>
       <img class="plugin-logo"
         src="<?php echo $plugin->assets_url; ?>/images/loops-and-logic-logo.png"
-        alt="Tangible Blocks Logo"
+        alt="Loops & Logic Logo"
         width="40"
       >
       <?php echo $plugin->title; ?>
