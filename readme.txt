@@ -133,6 +133,13 @@ Everything will work with themes built according to WordPress standards.
 
 = 3.0.0 =
 
-Release Date: 2022-06
+Release Date: 2022-07
 
--
+- Layout template type: Correctly apply rule for "Singular - All post types"
+- Template editor
+  - Wrap HTML Lint library in unique namespace to improve compatibility with Customizer and other plugins that may load a different version
+  - Disable AJAX save until following issues are resolved
+    - Form nonce expiring after one day
+    - Reliably save the post slug
+    - Show confirmation dialog on window unload only when necessary
+- Import: Clear cached style when overwriting existing template

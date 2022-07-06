@@ -5,7 +5,11 @@ return function() use ($framework, $plugin) {
   ?>
   <h2>Getting Started</h2>
 
-  <p><a href="https://loop.tangible.one/">The documentation site</a> has a complete description of plugin features.</p>
+  <p>Here is the <a href="https://tangibleblocks.com/" target="_blank">official site for Loops & Logic</a>.</p>
+
+  <p><a href="https://loop.tangible.one/">The documentation site</a> has a complete description of the template system.</p>
+
+  <hr>
 
   <p>In the admin sidebar menu <b>Tangible</b>, there is a list of template types and actions.</p>
   <p>Use the <a href="<?php echo admin_url('edit.php?post_type=tangible_template'); ?>">template post type</a> to manage reusable HTML templates.</p>
