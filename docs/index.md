@@ -2,6 +2,11 @@
 
 All plugin features have been moved into the [Template System module](/modules/template-system).
 
+#### Source code
+
+https://bitbucket.org/tangibleinc/loops-and-logic
+
+
 ## Getting started
 
 ```sh
