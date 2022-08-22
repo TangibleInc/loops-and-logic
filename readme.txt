@@ -133,7 +133,7 @@ Everything will work with themes built according to WordPress standards.
 
 = 3.0.0 =
 
-Release Date: 2022-08-20
+Release Date: 2022-08-22
 
 - ACF select: Support looping field with single select value
 - ACF image url field: Support size attribute
@@ -143,7 +143,7 @@ Release Date: 2022-08-20
   - Implemented: Embed, Glider, Mermaid, Prism, Slider
   - In progress: Chart, Paginator, Table
 - Gutenberg, Beaver, and Elementor integrations
-  - Ensure current post as default loop context in dynamically loaded preview
+  - Ensure current post as default loop context in page builder preview, builder-specific loops, and template shortcode
   - Remove unused styles
 - HTML module: Add special tag attribute named "tag-attributes" for dynamic attributes with or without value
 - HTML Lint library
@@ -152,6 +152,7 @@ Release Date: 2022-08-20
 - Import/Export
   - Clear any cached field values such as compiled CSS when overwriting an existing template
   - Export all template types with orderby=menu_order, to ensure that location rules are applied in the correct priority
+  - Support templates with post status other than publish: draft, future, pending, private (skip auto-draft, inherit/revision, and trash)
 - Improve compatibility with PHP 8.1
 - Layout template type
   - Add location rule "Nowhere" to disable loading
@@ -165,7 +166,9 @@ Release Date: 2022-08-20
   - For starts_with and ends_with, if subject is list then check first/last item
 - Start Comment loop type
 - Start developer docs: architecture, plan, design system
-- Template archive view: Correctly show location rules for imported templates
+- Template archive view
+  - Correctly show location rules for imported templates
+  - Support select and copy template ID
 - Template editor
   - Disable AJAX save until following issues are resolved
     - Form nonce expiring after one day
