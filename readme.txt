@@ -133,7 +133,7 @@ Everything will work with themes built according to WordPress standards.
 
 = 3.0.0 =
 
-Release Date: 2022-08-22
+Release Date: 2022-08-23
 
 - ACF select: Support looping field with single select value
 - ACF image url field: Support size attribute
