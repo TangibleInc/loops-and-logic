@@ -15,7 +15,7 @@ Loops & Logic is a template system with content loops and conditions.
 
 === Support ===
 
-* Please see [our documentation site](https://loop.tangible.one/) for a complete description of plugin features.
+* Please see the [official plugin site](https://loopsandlogic.com/) and [the documentation](https://docs.loopsandlogic.com/) for a complete description of plugin features.
 * Support & discussions can be found on [our forum located here](https://discourse.tangible.one/).
 
 === Key Features ===

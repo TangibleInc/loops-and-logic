@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Tangible: Loops & Logic
- * Plugin URI: https://loop.tangible.one/
+ * Plugin URI: https://loopsandlogic.com/
  * Description: A template system with content type loops and conditions.
  * Version: 3.0.0
  * Author: Team Tangible
