@@ -1,6 +1,6 @@
 === Loops & Logic ===
-Stable tag: 3.0.0
-Requires at least: 5.6
+Stable tag: 3.0.1
+Requires at least: 7.0
 Tested up to: 6.0
 Requires PHP: 7.0
 License: GPLv2
@@ -130,6 +130,17 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.0.1 =
+
+Release Date: 2022-10-05
+
+- Calendar loop types
+  - Improve handling in case invalid values are passed
+  - Week loop: Correctly handle January which can have a week row that starts in the previous year
+- HTML Hint: Add exception for Shortcode tag to allow self-closing raw tag
+- Loop and Field tags: Get current post context inside builder preview when post status is other than publish
+- Template editor: Improve compatibility with Beaver Builder's CSS
 
 = 3.0.0 =
 
