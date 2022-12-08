@@ -1,8 +1,8 @@
 === Loops & Logic ===
-Stable tag: 3.0.1
-Requires at least: 7.0
-Tested up to: 6.0
-Requires PHP: 7.0
+Stable tag: 3.1.0
+Requires at least: 6.0
+Tested up to: 6.1
+Requires PHP: 7.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: loop, logic, template, query, content
@@ -130,6 +130,20 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.1.0 =
+
+Release Date: 2022-12-08
+
+- Loop: Improve getting default loop context for search results archive
+- Sass module
+  - Upgrade compiler library to ScssPhp 1.11.0
+  - Remove Autoprefixer and its dependency CSS Parser; Internet Explorer no longer supported
+  - Improve passing variables - Handle all known value types to be compatible with new compiler
+  - Convert any compiler error message to CSS comment
+- Template post types
+  - Support any database table prefix including `wp_`
+  - Remove default slug metabox in edit screen to support AJAX save; Related issue in WP core: [Can't change page permalink if slug metabox is removed](https://core.trac.wordpress.org/ticket/18523)
 
 = 3.0.1 =
 
