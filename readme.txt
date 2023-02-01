@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 Requires at least: 6.0
 Tested up to: 6.1
 Requires PHP: 7.2
@@ -130,6 +130,16 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.1.2 =
+
+Release Date: 2023-02-01
+
+- Improve compatibility with PHP 8.2
+- Loop: Improve logic to set current post as loop context for templates loaded inside shortcodes and builder-specific post loops, such as Elementor Loop Grid widget and Beaver Post Loop
+- Plugin framework: Fix invalid hook name of ready action specific to module and version
+- Post Loop: Add alias "current" (same as "today") for parameter "custom_date_field_value"
+- Taxonomy Term Loop: Support multiple IDs for parameter "post"
 
 = 3.1.1 =
 
