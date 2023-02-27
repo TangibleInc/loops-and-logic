@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.1.2
+Stable tag: 3.1.3
 Requires at least: 6.0
 Tested up to: 6.1
 Requires PHP: 7.2
@@ -134,6 +134,21 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.1.3 =
+
+Release Date: 2023-02-27
+
+- Add WP Grid Builder integration with Tangible Template widget
+- Embed module: Use CSS feature for aspect-ratio, and remove padding-top workaround
+- Gutenberg integration
+  - Improve compatibility with Full-Site Editor, which is still in beta stage
+  - Solve issue with shortcode inside pagination loop - Protect template HTML result from Gutenberg applying content filters, such as wptexturize and do_shortcode, after all blocks have been rendered
+- Sass module: Solve issue with first style rule selector - Prevent compiler from adding @charset rule or "byte-order mark", which are only valid for CSS stylesheet as a file, when it detects a multibyte character within the Sass source code
+- Table module: Make column filter case-insensitive, and add support for multibyte characters
+- Template post types
+  - Add support for user option "Disable the visual editor when writing" by preventing it from filtering template content
+  - Improve generating template slug from title, including converting em dash to regular dash
 
 = 3.1.2 =
 
