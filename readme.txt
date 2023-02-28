@@ -102,6 +102,22 @@ L&L supports Advanced Custom Fields (ACF) field types in the core, allowing you 
 ``  </If>
 ``</Loop>
 
+**✅ Elementor**
+
+Loops & Logic provides an Elementor widget that allows you to either write L&L code directly in the page builder widget or select from a pre-existing saved template. 
+
+**✅ Gutenberg**
+
+Loops & Logic provides a Gutenberg block that allows you to either write L&L code directly in the block builder block or select from a pre-existing saved template. 
+
+**✅ Beaver Builder**
+
+Loops & Logic provides a Beaver Builder module that allows you to either write L&L code directly in the page builder module or select from a pre-existing saved template. 
+
+**✅ WP Grid Builder**
+
+Loops & Logic provides a WP Grid Builder block that allows you to select from a pre-existing saved template to load in WP Grid Builder. 
+
 **✅ WP Fusion**
 
 The freely-included WP Fusion integration allows you to use conditional logic to protect or display different content based on a user's tags.
