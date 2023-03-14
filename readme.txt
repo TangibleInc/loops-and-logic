@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.1.5
+Stable tag: 3.1.7
 Requires at least: 6.0
 Tested up to: 6.1
 Requires PHP: 7.2
@@ -150,6 +150,16 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.1.7 =
+
+Release Date: 2023-03-14
+
+- Gutenberg integration
+  - Improve content filter logic to protect template HTML
+    - Ensure it applies only when inside do_blocks before do_shortcode
+    - Support block themes
+  - Improve getting current post ID when inside builder
 
 = 3.1.5 =
 
