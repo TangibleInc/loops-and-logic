@@ -1,7 +1,7 @@
 === Loops & Logic ===
-Stable tag: 3.1.8
+Stable tag: 3.1.9
 Requires at least: 6.0
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 7.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -150,6 +150,17 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.1.9 =
+
+Release Date: 2023-04-06
+
+- Format: Improve handling of spaces for kebab and snake case
+- If tag
+  - Deprecate "is_not" in favor of "not", which supports all condition types and operators including "is"
+  - Convert "is_not" to "not" and "is" for backward compatibility
+- Improve PHP 8.2 compatibility
+- Template post types: Fix drag-and-drop sort in post archive
 
 = 3.1.8 =
 
