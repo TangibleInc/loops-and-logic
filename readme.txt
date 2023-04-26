@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.1.9
+Stable tag: 3.2.0
 Requires at least: 6.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -150,6 +150,31 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.2.0 =
+
+Release Date: 2023-04-26
+
+- Add JSON-LD tag: Create a map and generate script tag for [JSON Linked Data](https://json-ld.org/)
+- Add Raw tag: Prevents parsing its inner content; Useful for passing literal text, such as HTML, to other tags and tag attributes
+- Format tag
+  - Add attributes "start_slash" and "end_slash" to add slash to URL or any string; Use "start_slash=false" and "end_slash=false" to remove slash; These can be combined in one tag
+  - Improve support for replace/with text that includes HTML
+- HTML module: Improve "tag-attributes" feature to support dynamic tags
+- Layout template type
+  - Add theme position "Document Head" for adding Meta tags, JSON-LD schema, or link tag to load CSS files
+  - Add theme position "Document Foot" for adding script tag to load JavaScript files
+- Loop tag
+  - Add attribute "sticky" for improved sticky posts support
+    - Without sticky set, treat sticky posts as normal posts; this is the default behavior (backward compatible)
+    - With sticky=true, put sticky posts at the top
+    - With sticky=false, exclude sticky posts
+    - With sticky=only, include sticky posts only
+  - Deprecate "ignore_sticky_posts" due to WP_Query applying it only on home page
+- Query variable type: Support passing loop attributes via AJAX, such as for pagination
+- Url tag
+  - Add attribute "query=true" to include all query parameters in current URL
+  - Add attributes "include" and "exclude" to selectively pass query parameters by name; Accepts comma-separated list for multiple names
 
 = 3.1.9 =
 
