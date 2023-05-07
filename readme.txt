@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.2.0
+Stable tag: 3.2.1
 Requires at least: 6.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -150,6 +150,14 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.2.1 =
+
+Release Date: 2023-05-08
+
+- Elementor integration: Ensure dynamic modules are activated inside preview iframe
+- Format tag: Add attribute "remove_html" to remove HTML and make plain text
+- Post loop: Improve sticky posts - Ensure "orderby" is only applied to non-sticky posts
 
 = 3.2.0 =
 
