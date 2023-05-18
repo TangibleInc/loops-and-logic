@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.2.2
+Stable tag: 3.2.3
 Requires at least: 6.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -151,10 +151,12 @@ Everything will work with themes built according to WordPress standards.
 
 == Changelog ==
 
-= 3.2.2 =
+= 3.2.3 =
+
+Release Date: 2023-05-18
 
 - Elementor integration: Enqueue dynamic module loader only when inside preview iframe
-- Gutenberg integration: Remove do_shortcode filter workaround from WP 6.2.1
+- Gutenberg integration: Improve compatibility with WP 6.2.1 - Remove the do_shortcode filter workaround that was necessary in previous versions; See https://core.trac.wordpress.org/ticket/58333#comment:59
 - List and Map tag
   - Add Item/Key tag attribute "type" for value type: number, boolean, list, map
   - Improve Item/Key tag to treat single List or Map inside as direct value, instead of converting it to string
