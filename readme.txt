@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 Requires at least: 6.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -150,6 +150,18 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.2.2 =
+
+- Elementor integration: Enqueue dynamic module loader only when inside preview iframe
+- Gutenberg integration: Remove do_shortcode filter workaround from WP 6.2.1
+- List and Map tag
+  - Add Item/Key tag attribute "type" for value type: number, boolean, list, map
+  - Improve Item/Key tag to treat single List or Map inside as direct value, instead of converting it to string
+- Loop tag
+  - Add attribute "post_type" as the recommended way to create a post loop with custom post type
+    This makes it distinct from attribute "type", which creates an instance of a loop type (such as "post" or "user") and only falls back to post loop if there's no loop type with the same name
+  - Fix pagination issue when attribute "tag" is used
 
 = 3.2.1 =
 
