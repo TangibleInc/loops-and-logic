@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.2.3
+Stable tag: 3.2.4
 Requires at least: 6.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -150,6 +150,13 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.2.4 =
+
+Release Date: 2023-05-24
+
+- Elementor integration: Improve dynamic module loader by removing AJAX library from dependency list of Template Editor script
+- Post loop: Improve handling when called directly without "type" or "post_type" parameter
 
 = 3.2.3 =
 
