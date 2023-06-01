@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.2.5
+Stable tag: 3.2.7
 Requires at least: 6.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -150,6 +150,12 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.2.7 =
+
+Release Date: 2023-06-01
+
+- Link tags: Ensure any null is converted to empty string before passing to str_replace - Compatibility with PHP 8.x
 
 = 3.2.5 =
 
