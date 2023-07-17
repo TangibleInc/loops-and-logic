@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 3.2.8
+Stable tag: 3.2.9
 Requires at least: 6.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -150,6 +150,15 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 3.2.9 =
+
+Release Date: 2023-07-17
+
+- Format tag
+  - Format list index: Fix warning from array_shift()
+  - Support capture groups for replace_pattern, for example: replace_pattern="/(\d{3})/" with="$1"
+  - When invalid regular expression is passed, emit a warning instead of throwing an error
 
 = 3.2.8 =
 
