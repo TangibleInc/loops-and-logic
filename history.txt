@@ -3,7 +3,7 @@
 
 = 2.4.4 =
 
-Release Date: 2022-05-19
+Release Date: 2022-05-19 
 
 - Add variable type "math" to get/set variables for Math tag
 - If tag: Add condition "query" to check if query variable exists
