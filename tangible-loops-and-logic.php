@@ -11,7 +11,6 @@
 
 define( 'TANGIBLE_LOOPS_AND_LOGIC_VERSION', '3.3.1' );
 
-require_once __DIR__ . '/vendor/tangible/plugin-framework/index.php';
 require_once __DIR__ . '/vendor/tangible/template-system/index.php';
 
 /**
@@ -24,8 +23,7 @@ function tangible_loops_and_logic($instance = false) {
 
 add_action('plugins_loaded', function() {
 
-  $framework = tangible();
-  $plugin    = $framework->register_plugin([
+  $plugin    = tangible\plugin\register([
     'name'           => 'tangible-loops-and-logic',
     'title'          => 'Loops & Logic',
     'setting_prefix' => 'tloopslogic',
@@ -43,7 +41,7 @@ add_action('plugins_loaded', function() {
 
   tangible_loops_and_logic( $plugin );
 
-  // Features loaded will have in their local scope: $framework, $plugin, ...
+  // Features loaded will have in their local scope: $plugin
 
   $template_system = tangible_template_system();
 
@@ -57,7 +55,7 @@ add_action('plugins_loaded', function() {
 
   // Ready hook for plugins that depend on Loops and Logic
 
-  add_action('plugins_loaded', function() use ($framework, $plugin, $loop, $logic, $interface, $html) {
+  add_action('plugins_loaded', function() use ($plugin, $loop, $logic, $interface, $html) {
 
     // require_once __DIR__.'/includes/integrations/index.php';
 
@@ -65,4 +63,4 @@ add_action('plugins_loaded', function() {
 
   }, 12); // Give time for other plugins at priority 10
 
-}, 10);
+}, 10); // Newest version of Template System ready

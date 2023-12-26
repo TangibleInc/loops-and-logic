@@ -1,8 +1,9 @@
 <?php
+use tangible\framework;
 
 require_once __DIR__.'/admin-notice.php';
 
-$plugin->register_settings([
+framework\register_plugin_settings($plugin, [
   'css' => $plugin->assets_url . '/build/admin.min.css',
   'title_callback' => function() use ($plugin) {
     ?>
@@ -21,11 +22,3 @@ $plugin->register_settings([
     ]
   ],
 ]);
-
-/**
- * Remove Helpscout script from plugin settings page
- * @see /vendor/tangible/plugin-framework/settings/page.php, at the bottom
- */
-if ($plugin->is_settings_page()) {
-  $framework->store_url = null;
-}

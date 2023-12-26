@@ -2,15 +2,10 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "git@bitbucket.org:/tangibleinc/tangible-plugin-framework.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@bitbucket.org:/tangibleinc/template-system.git"
+      "url": "https://github.com/tangibleinc/template-system"
     }
   ],
   "require": {
-    "tangible/plugin-framework": "dev-variant/without-updater",
     "tangible/template-system": "dev-main"
   },
   "require-dev": {},

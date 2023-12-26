@@ -6,13 +6,15 @@ All plugin features have been moved into the [Template System module](/modules/t
 
 https://bitbucket.org/tangibleinc/loops-and-logic
 
-
 ## Getting started
+
+Pre-requisites: [Node.js](https://nodejs.org/en/), [PHP](https://www.php.net/), [Composer](https://getcomposer.org/)
 
 ```sh
 git clone git@bitbucket.org:tangibleinc/loops-and-logic.git
 cd loops-and-logic
-npm install && composer install
+npm install
+composer install
 ```
 
 ## Develop
@@ -34,5 +36,3 @@ Format to code standard
 ```sh
 npm run format
 ```
-
-
