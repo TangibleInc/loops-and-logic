@@ -23,10 +23,11 @@ framework\register_admin_notice(function() use ($plugin) {
     data-tangible-admin-notice="<?php echo $welcome_notice_key; ?>"
   >
     <p>Welcome to <b><?php echo $plugin->title; ?></b>. Please see the <a href="<?php
-
-      // echo $plugin->get_settings_page_url('welcome');
-
-    ?>&dismiss_admin_notice=true">plugin settings page</a> to get started.</p>
+      $url = (is_multisite() ? 'settings.php' : 'options-general.php')
+        . "?page={$plugin->name}-settings&dismiss_admin_notice=true"
+      ;
+      echo esc_attr($url);
+    ?>">plugin settings page</a> to get started.</p>
   </div>
   <?php
 
