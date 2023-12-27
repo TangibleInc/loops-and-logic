@@ -167,7 +167,7 @@ Other improvements:
 
 - ACF integration: Add Field tag attribute "acf_textarea" to apply formatting based on field settings
 - Import/Export: Use compressed format (PNG) by default
-- Show admin menu, edit screens, and template editor (Gutenberg, Elementor, Beaver) only to admins with `unfiltered_html` capability. On multisite intalls,
+- Show admin menu, edit screens, and template editor (Gutenberg, Elementor, Beaver) only to admins with `unfiltered_html` capability. On multisite installs,
  by default only network admins have this capability, not subsite admins.
 - Update included libraries: HJSON, Select2, Chart.js, Mermaid
 
