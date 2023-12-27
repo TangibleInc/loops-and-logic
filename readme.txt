@@ -1,7 +1,7 @@
 === Loops & Logic ===
-Stable tag: 3.3.1
+Stable tag: 4.0.0
 Requires at least: 6.0
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 7.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -150,6 +150,26 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.0.0 =
+
+Release Date: 2024-01-01
+
+This version brings an evolution of the Template System at the heart of Loops & Logic and Tangible Blocks.
+
+- [Documentation](https://docs.loopsandlogic.com/reference/template-system): Reference pages for developers and contributors, with technical details of how the codebase is organized.
+- [Editor](https://docs.loopsandlogic.com/reference/template-system/editor/): New code editor based on CodeMirror 6 is enabled by default for template post types, Gutenberg, and ACF Template field. The old editor is still used for Elementor and Beaver Builder until integration is complete.
+- Framework and Modules: Features have been organized into modules which can be independently built, documented, tested, and optionally published. This replaces the previous Plugin Framework and Interface module.
+- [GitHub repository](https://github.com/tangibleinc/template-system): New home of the Template System source code and project, with better developer experience and social collaboration. Welcome to start new issues, pull requests, and discussions.
+- Testing: Improve coverage of unit tests, and prepare foundation for end-to-end tests with headless browser and WordPress environment in Docker. This is an on-going effort to exercise and verify all features of the plugin.
+
+Other improvements:
+
+- ACF integration: Add Field tag attribute "acf_textarea" to apply formatting based on field settings
+- Import/Export: Use compressed format (PNG) by default
+- Show admin menu, edit screens, and template editor (Gutenberg, Elementor, Beaver) only to admins with `unfiltered_html` capability. On multisite intalls,
+ by default only network admins have this capability, not subsite admins.
+- Update included libraries: HJSON, Select2, Chart.js, Mermaid
 
 = 3.3.1 =
 
