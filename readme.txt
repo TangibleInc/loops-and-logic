@@ -167,8 +167,9 @@ Other improvements:
 
 - ACF integration: Add Field tag attribute "acf_textarea" to apply formatting based on field settings
 - Import/Export: Use compressed format (PNG) by default
-- Show admin menu, edit screens, and template editor (Gutenberg, Elementor, Beaver) only to admins with `unfiltered_html` capability. On multisite installs,
- by default only network admins have this capability, not subsite admins.
+- Show admin menu, edit screens, and template editor (Gutenberg, Elementor, Beaver) only to admins with `unfiltered_html` capability. On multisite installs, by default only network admins have this capability, not subsite admins.
+- Prism: Update library to 1.29.0 - Replace Clipboard.js with browser-native `navigator.clipboard`
+- Template edit screen: Add Preview tab
 - Update included libraries: HJSON, Select2, Chart.js, Mermaid
 
 = 3.3.1 =
