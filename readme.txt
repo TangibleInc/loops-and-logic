@@ -166,7 +166,10 @@ This version brings an evolution of the Template System at the heart of Loops & 
 Other improvements:
 
 - ACF integration: Add Field tag attribute "acf_textarea" to apply formatting based on field settings
-- Import/Export: Use compressed format (PNG) by default
+- Import/Export
+  - Add export rule to include/exclude template categories
+  - Update PNG Compressor with better support for Firefox
+  - Use compressed format (PNG) by default
 - Show admin menu, edit screens, and template editor (Gutenberg, Elementor, Beaver) only to admins with `unfiltered_html` capability. On multisite installs, by default only network admins have this capability, not subsite admins.
 - Prism: Update library to 1.29.0 - Replace Clipboard.js with browser-native `navigator.clipboard`
 - Template edit screen: Add Preview tab
