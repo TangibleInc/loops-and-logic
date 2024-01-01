@@ -155,8 +155,6 @@ Everything will work with themes built according to WordPress standards.
 
 Release Date: 2024-01-01
 
-This version brings an evolution of the Template System at the heart of Loops & Logic and Tangible Blocks.
-
 - [Documentation](https://docs.loopsandlogic.com/reference/template-system): Reference pages for developers and contributors, with technical details of how the codebase is organized.
 - [Editor](https://docs.loopsandlogic.com/reference/template-system/editor/): New code editor based on CodeMirror 6 is enabled by default for template post types, Gutenberg, and ACF Template field. The old editor is still used for Elementor and Beaver Builder until integration is complete.
 - Framework and Modules: Features have been organized into modules which can be independently built, documented, tested, and optionally published. This replaces the previous Plugin Framework and Interface module.
@@ -174,5 +172,5 @@ Other improvements:
 - Prism: Update library to 1.29.0 - Replace Clipboard.js with browser-native `navigator.clipboard`
 - Template post types
   - Archive screen: Add bulk action to move selected posts to trash
-  - Edit screen: Add Preview tab
+  - Edit screen: Add Preview pane with auto-refresh
 - Update included libraries: HJSON, Select2, Chart.js, Mermaid
