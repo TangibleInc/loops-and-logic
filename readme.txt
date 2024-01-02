@@ -164,13 +164,17 @@ Release Date: 2024-01-01
 Other improvements:
 
 - ACF integration: Add Field tag attribute "acf_textarea" to apply formatting based on field settings
+- Archive screen: Add bulk action to move selected posts to trash
+- Assets edit screen: Improve documentation
+- Atomic CSS: Generate CSS utility classes on demand.
+  Similar to Tailwind, this feature uses a style engine called [UnoCSS](https://unocss.dev/) to generate CSS rules from utility classes found in an HTML template, every time it is saved. On the frontend, the generated styles are minified together, removing any redundant rules. Enable in plugin settings.
+- Edit screen: Add Preview pane with auto-refresh
+- Editor: Hyperlink extension - Add clickable link icon next to a valid URL; Improve color picker
 - Import/Export
   - Add export rule to include/exclude template categories
   - Update PNG Compressor with better support for Firefox
   - Use compressed format (PNG) by default
 - Show admin menu, edit screens, and template editor (Gutenberg, Elementor, Beaver) only to admins with `unfiltered_html` capability. On multisite installs, by default only network admins have this capability, not subsite admins.
-- Prism: Update library to 1.29.0 - Replace Clipboard.js with browser-native `navigator.clipboard`
-- Template post types
-  - Archive screen: Add bulk action to move selected posts to trash
-  - Edit screen: Add Preview pane with auto-refresh
-- Update included libraries: HJSON, Select2, Chart.js, Mermaid
+- Update included libraries
+  - HJSON, Select2, Chart.js, Mermaid, ..
+  - Prism: Update library to 1.29.0 - Replace Clipboard.js with browser-native `navigator.clipboard`
