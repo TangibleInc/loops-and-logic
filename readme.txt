@@ -153,7 +153,7 @@ Everything will work with themes built according to WordPress standards.
 
 = 4.0.0 =
 
-Release Date: 2024-01-01
+Release Date: 2024-01-03
 
 - [Documentation](https://docs.loopsandlogic.com/reference/template-system): Reference pages for developers and contributors, with technical details of how the codebase is organized.
 - [Editor](https://docs.loopsandlogic.com/reference/template-system/editor/): New code editor based on CodeMirror 6 is enabled by default for template post types, Gutenberg, and ACF Template field. The old editor is still used for Elementor and Beaver Builder until integration is complete.

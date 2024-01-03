@@ -1,6 +1,6 @@
 # Loops & Logic
 
-All plugin features have been moved into the [Template System module](/modules/template-system).
+All plugin features have been moved into the [Template System module](https://github.com/tangibleinc/template-system).
 
 #### Source code
 

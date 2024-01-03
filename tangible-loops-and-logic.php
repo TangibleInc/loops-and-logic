@@ -3,13 +3,13 @@
  * Plugin Name: Tangible: Loops & Logic
  * Plugin URI: https://loopsandlogic.com/
  * Description: A template system with content type loops and conditions.
- * Version: 4.0.0-beta.4
+ * Version: 4.0.0
  * Author: Team Tangible
  * Author URI: https://teamtangible.com
  * License: GPLv2 or later
  */
 
-define( 'TANGIBLE_LOOPS_AND_LOGIC_VERSION', '4.0.0-beta.4' );
+define( 'TANGIBLE_LOOPS_AND_LOGIC_VERSION', '4.0.0' );
 
 require_once __DIR__ . '/vendor/tangible/template-system/index.php';
 

@@ -14,7 +14,6 @@ return function() use ($plugin) {
   <p>In the admin sidebar menu <b>Tangible</b>, there is a list of template types and actions.</p>
   <p>Use the <a href="<?php echo admin_url('edit.php?post_type=tangible_template'); ?>">template post type</a> to manage reusable HTML templates.</p>
 
-  <p>See <a href="https://loop.tangible.one/overview/template-editor">available keyboard shortcuts</a> for the editor.</p>
   <hr>
   <p>A <b>Tangible Template</b> module is included for the following builders:
     <ul class="list">
