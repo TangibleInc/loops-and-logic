@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 4.0.0
+Stable tag: 4.0.1
 Requires at least: 6.0
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -150,6 +150,12 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.0.1 =
+
+Release Date: 2024-01-04
+
+- Fix issues related to code reorganization: Mobile Detect and WP Fusion; Add integration tests to ensure no regression
 
 = 4.0.0 =
 
