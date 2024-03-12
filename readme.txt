@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 4.0.2
+Stable tag: 4.1.0
 Requires at least: 6.0
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -150,6 +150,34 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.1.0 =
+
+Release Date: 2024-03-12
+
+- ACF integration
+  - **Breaking change**: Date field types now get their default formatting from the field setting for Return Format. Previously the defaults were from site setting (Date field), "Y-m-d H:i:s" (Date/Time), and "H:i:s" (Time). Now they use the selected format in each field's settings, or ACF's default return format: "d/m/Y" (Date), "d/m/Y g:i a" (Date/Time), and "g:i a" (Time).
+  - Improve handling of "format" and "locale" attributes
+- Editor
+  - Formatter
+    - Add keyboard shortcuts to support formatting by entire document or selected lines
+    - Start a fork of Prettier HTML formatter to customize based on template language definition
+  - Linter: Improve HTML linter rule for unique ID so it applies only to static tags
+  - Update CodeMirror modules and Prettier
+- HTML module
+  - Add comprehensive HTML test suite with test files from Parse5, Prettier, and Unified
+  - Refactor to improve performance: ~3% faster
+- Loop types
+  - Consolidate everywhere that accepts a list to support comma-separated list and JSON array
+  - Improve sort by field using "field_compare" 
+  - List, Map, Map Keys: Support query parameters for base loop, such as offset, count, sort, filter, pagination
+    - List: Use field name "value", like "sort_field=value"
+    - Map keys: Use field name "key" or "value". Keep default order of keys as defined, unless "sort_field=key" is applied - previously was sorted alphabetically.
+- Gutenberg integration: Template block: Remember previously selected template when switching tabs
+- Sass module: Upgrade Sass compiler (scssphp) to 1.12.1, and CodeMirror Sass language support
+- Taxonomy term loop: Ensure "post" attribute accepts list variable
+- Template post types: Ensure templates always have a universal ID assigned, during post save and before exporting. This improves how duplicate templates are handled during import.
+- Template tag/shortcode: Ensure no post matches if attribute "name" is an empty string - See [WP_Query matches *any* post when query parameter "name" is an empty string](https://core.trac.wordpress.org/ticket/60468)
 
 = 4.0.2 =
 
