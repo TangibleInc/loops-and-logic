@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   build: [
 
     // Frontend - See includes/enqueue.php

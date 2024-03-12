@@ -1,14 +1,34 @@
 {
   "name": "tangible-loops-and-logic",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "roll dev",
     "build": "roll build",
-    "format": "roll format"
+    "format": "roll format",
+    "start": "npm run env:start",
+    "stop": "npm run env:stop",
+    "test": "npm run test:e2e",
+    "tdd": "npm run test:e2e:watch",
+    "-- Local environment --": "https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env",
+    "env": "wp-env",
+    "env:start": "wp-env start",
+    "env:test:7.4": "WP_ENV_PHP_VERSION=7.4 wp-env start && npm run env:test",
+    "env:test:8.2": "WP_ENV_PHP_VERSION=8.2 wp-env start && npm run env:test",
+    "test:e2e": "playwright test",
+    "test:e2e:watch": "chokidar 'tests/e2e/**/*.js' --initial -c 'playwright test -- --retries=0'",
+    "test:e2e:ui": "playwright test --ui",
+    "env:stop": "wp-env stop",
+    "env:destroy": "wp-env destroy",
+    "env:clean": "wp-env clean all"
   },
   "dependencies": {
   },
   "devDependencies": {
-    "@tangible/roller": "1.x"
+    "@playwright/test": "^1.40.1",
+    "@tangible/roller": "1.x",
+    "@wordpress/e2e-test-utils-playwright": "^0.16.0",
+    "@wordpress/env": "^9.0.0",
+    "chokidar-cli": "^3.0.0"
   }
 }
