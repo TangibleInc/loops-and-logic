@@ -1,7 +1,7 @@
 === Loops & Logic ===
-Stable tag: 4.1.0
+Stable tag: 4.1.1
 Requires at least: 6.0
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 7.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -150,6 +150,17 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.1.1 =
+
+Release Date: 2024-03-14
+
+- ACF integration
+  - Date field types: Ensure unformatted value is passed to date conditions
+  - Repeater: Correctly set up subfield loop
+- Post loop: Handle case when extended query parameter for post/user/category/tag slug is not array
+- Sass module: Revert to SCSS-PHP 1.11.1 to keep compatibility with PHP 7.4
+- Taxonomy term loop: Correctly pass post object IDs to query
 
 = 4.1.0 =
 
