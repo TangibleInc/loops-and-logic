@@ -157,6 +157,7 @@ Release Date: 2024-03-22
 
 - ACF Date/Time field: Add tests for field comparison with timestamps
 - Base loop: Improve casting query parameter to array when non-string value is passed
+- Beaver integration: Ensure Template module restores current post in context
 - Taxonomy term loop: Handle case when include/exclude is given as integer ID
 - Template save and format slugify: Use remove_accents() to convert all accent characters to ASCII characters, before creating slug with sanitize_title_with_dashes()
 
