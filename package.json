@@ -3,32 +3,31 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "start": "wp-now start --open",
     "dev": "roll dev",
     "build": "roll build",
     "format": "roll format",
-    "start": "npm run env:start",
-    "stop": "npm run env:stop",
-    "test": "npm run test:e2e",
+    "deps": "roll install",
+    "archive": "roll archive && rm -rf publish/tangible-loops-and-logic && unzip publish/tangible-loops-and-logic.zip -d publish/ && npm run test:archive",
+    "// Test": "",
+    "test": "roll run tests/index.ts",
+    "test:all": "npm run test && npm run test:8.3 && npm run e2e",
+    "test:8.3": "roll run tests/index.ts PHP_VERSION=8.3",
+    "test:archive": "roll run tests/index.ts TEST_ARCHIVE=1",
     "tdd": "npm run test:e2e:watch",
-    "-- Local environment --": "https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env",
-    "env": "wp-env",
-    "env:start": "wp-env start",
-    "env:test:7.4": "WP_ENV_PHP_VERSION=7.4 wp-env start && npm run env:test",
-    "env:test:8.2": "WP_ENV_PHP_VERSION=8.2 wp-env start && npm run env:test",
-    "test:e2e": "playwright test",
-    "test:e2e:watch": "chokidar 'tests/e2e/**/*.js' --initial -c 'playwright test -- --retries=0'",
-    "test:e2e:ui": "playwright test --ui",
-    "env:stop": "wp-env stop",
-    "env:destroy": "wp-env destroy",
-    "env:clean": "wp-env clean all"
+    "e2e": "playwright test --config tests/playwright.config.js",
+    "e2e:debug": "playwright test --config tests/playwright.config.js --debug",
+    "e2e:install": "playwright install chromium",
+    "e2e:ui": "playwright test --config tests/playwright.config.js --ui",
+    "e2e:watch": "chokidar 'tests/e2e/**/*.js' --initial --silent -c 'playwright test -- --retries=0'"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@playwright/test": "^1.40.1",
-    "@tangible/roller": "1.x",
-    "@wordpress/e2e-test-utils-playwright": "^0.16.0",
-    "@wordpress/env": "^9.0.0",
-    "chokidar-cli": "^3.0.0"
+    "@playwright/test": "^1.44.1",
+    "@tangible/now": "^1.0.8",
+    "@tangible/roller": "2.x",
+    "@wordpress/e2e-test-utils-playwright": "^1.0.0",
+    "chokidar-cli": "^3.0.0",
+    "testra": "^2.1.3"
   }
 }

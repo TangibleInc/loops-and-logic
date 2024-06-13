@@ -1,9 +1,9 @@
-import { test, expect } from '@wordpress/e2e-test-utils-playwright'
+import { describe, test, expect } from '../../vendor/tangible/template-system/framework/playwright/index.js'
 
 /**
  * Tests to exercise the frontend and admin features of the Template System.
  *
- * Note: To interact with pages, locate elements by user-visible locators like
+ * To interact with pages, locate elements by user-visible locators like
  * accessible role, instead of CSS selectors which can change.
  *
  * @see https://playwright.dev/docs/locators#locating-elements
@@ -11,7 +11,7 @@ import { test, expect } from '@wordpress/e2e-test-utils-playwright'
  * @see https://www.w3.org/TR/html-aria/#docconformance
  */
 
-test.describe('Admin', () => {
+describe('Admin', () => {
   test('Dashboard', async ({ admin, page }) => {
     await admin.visitAdminPage('/')
     const heading = page.getByRole('heading', {
@@ -23,6 +23,7 @@ test.describe('Admin', () => {
 
   const plugins = [
     ['Loops & Logic', 'tangible-loops-and-logic/tangible-loops-and-logic'],
+    ['E2E', 'e2e-plugin/index'],
 
     ['Advanced Custom Fields', 'advanced-custom-fields/acf'],
     ['Elementor', 'elementor/elementor'],
@@ -99,6 +100,7 @@ test.describe('Admin', () => {
         await expect(activateLink).toBeTruthy()
 
         // Make a POST request
+
         await request.post(activateLink)
       }
 
@@ -111,7 +113,7 @@ test.describe('Admin', () => {
   }
 })
 
-test.describe('Admin menu', () => {
+describe('Admin menu', () => {
   test('Exists', async ({ admin, page }) => {
     await admin.visitAdminPage('/')
     expect(page.getByRole('navigation', { name: 'Main menu' })).toHaveCount(1)
@@ -122,7 +124,8 @@ test.describe('Admin menu', () => {
     expect(
       page
         .getByRole('navigation', { name: 'Main menu' })
-        .getByRole('link', { name: 'Tangible' }),
+        .getByRole('link', { name: 'Tangible' })
+        .first(),
     ).toHaveCount(1)
   })
 
@@ -204,7 +207,7 @@ test.describe('Admin menu', () => {
   })
 })
 
-test.describe('Template post type', () => {
+describe('Template post type', () => {
   test('Archive', async ({ admin, page }) => {
     await admin.visitAdminPage('/edit.php?post_type=tangible_template')
     const heading = await page.getByRole('heading', {

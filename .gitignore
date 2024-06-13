@@ -1,4 +1,5 @@
 /artifacts
+/publish
 /vendor
 node_modules
 .idea

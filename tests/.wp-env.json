@@ -1,0 +1,7 @@
+{
+  "mappings": {
+    "wp-content/plugins/e2e-plugin": "../vendor/tangible/template-system/framework/env/e2e-plugin",
+    "wp-content/plugins/tangible-loops-and-logic": "..",
+    "wp-content/themes/empty-block-theme": "../vendor/tangible/template-system/framework/empty-block-theme"
+  }
+}
