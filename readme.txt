@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 4.1.3
+Stable tag: 4.1.4
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.4
@@ -150,6 +150,37 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.1.4 =
+
+Release Date: 2024-06-13
+
+- Editor and language integration
+  - New HTML and CSS engines, linter, formatter
+  - Organize general-purpose editor and template language features independent of WordPress
+- Improve plugin zip package build/test/release workflow
+  - File size ~42% smaller
+  - Remove source maps for production
+- Improve support for SQLite database integration
+- Logic module: Build and evaluate conditional rules for frontend (TypeScript) and backend (PHP)
+  - Tags: Logic, Rule, All, Any, Not
+  - Integrate with If and tag using attribute "logic"
+- Pager module: Start new foundation for more modular pagination features
+  - Tags: Pager, PagerButtons, PagerFields, PagerLoading
+  - Support loop ID
+  - First/last, previous/next actions
+  - Multiple button groups and fields before/after loop
+- Post loop: Get loop context in taxonomy archive to return current taxonomy and term
+- Start features in progress (alpha)
+  - Content: Template type for content structure templates
+  - Views: Unified interface to edit and manage all template types (layouts, scripts, styles, assets, libraries)
+- Table module
+  - Fix error with method enqueue_table
+  - Fix warning when sorting value is null instead of string
+- Test environment with [wp-now](https://github.com/WordPress/playground-tools/tree/trunk/packages/wp-now)
+  - Tests for supported PHP versions
+  - End-to-end tests with Chromium
+  - Verify plugin zip package
 
 = 4.1.3 =
 
