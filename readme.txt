@@ -164,7 +164,7 @@ Release Date: 2024-06-13
 - Improve support for SQLite database integration
 - Logic module: Build and evaluate conditional rules for frontend (TypeScript) and backend (PHP)
   - Tags: Logic, Rule, All, Any, Not
-  - Integrate with If and tag using attribute "logic"
+  - Integrate with If tag using attribute "logic"
 - Pager module: Start new foundation for more modular pagination features
   - Tags: Pager, PagerButtons, PagerFields, PagerLoading
   - Support loop ID
