@@ -26,7 +26,7 @@ return function() use ($plugin) {
 
   <hr>
 
-  <p>Please visit <a href="https://discourse.tangible.one/c/loops-and-logic/9">our discussion forum</a> for questions, feature suggestions, and other feedback.</p>
+  <p>Please visit <a href="https://tangibletalk.com/">our discussion forum</a> for questions, feature suggestions, and other feedback.</p>
 
   <?php
 };
