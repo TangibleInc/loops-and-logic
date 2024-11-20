@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 4.1.4
+Stable tag: 4.1.5
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.4
@@ -150,6 +150,12 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.1.5 =
+
+Release Date: 2024-08-31
+
+- Fix XSS vulnerability when visiting admin settings page URL
 
 = 4.1.4 =
 
