@@ -51,14 +51,16 @@ export default run(async () => {
 
   let result: any;
 
+  test('Plugin - Activate', async () => {
+    let result = await ensurePlugin({ wpx });
+    is(true, result, "activate plugin");
+  })
+
   // Framework
   await import("../vendor/tangible/template-system/framework/tests/index.ts");
 
   test("Template system - Basic", async () => {
     // console.log(await wpx/* php */`return scandir(ABSPATH . 'wp-content/plugins');`)
-
-    result = await ensurePlugin({ wpx });
-    is(true, result, "activate plugin");
 
     result = await wpx`return function_exists('tangible_template_system');`;
     is(true, result, "tangible_template_system() exists");

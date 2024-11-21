@@ -3,11 +3,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "wp-now start --open",
+    "start": "wp-now start --blueprint=blueprint.dev.json",
     "dev": "roll dev",
     "build": "roll build",
     "format": "roll format",
-    "deps": "roll install",
+    "postinstall": "roll install",
+    "install:dev": "roll install --dev",
+    "update:dev": "roll update --dev",
     "archive": "roll archive && rm -rf publish/tangible-loops-and-logic && unzip publish/tangible-loops-and-logic.zip -d publish/ && npm run test:archive",
     "// Test": "",
     "test": "roll run tests/index.ts",
@@ -23,11 +25,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@playwright/test": "^1.44.1",
-    "@tangible/now": "^1.0.8",
-    "@tangible/roller": "^2.0.4",
-    "@wordpress/e2e-test-utils-playwright": "^1.0.0",
+    "@playwright/test": "^1.49.0",
+    "@tangible/now": "^1.1.3",
+    "@tangible/roller": "^2.1.4",
+    "@wordpress/e2e-test-utils-playwright": "^1.12.0",
     "chokidar-cli": "^3.0.0",
-    "testra": "^2.1.3"
+    "testra": "^2.1.4"
   }
 }
