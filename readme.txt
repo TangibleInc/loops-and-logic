@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 4.1.6
+Stable tag: 4.1.7
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.4
@@ -151,7 +151,7 @@ Everything will work with themes built according to WordPress standards.
 
 == Changelog ==
 
-= 4.1.6 =
+= 4.1.7 =
 
 Release Date: 2024-11-21
 
