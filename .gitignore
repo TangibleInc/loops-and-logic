@@ -1,13 +1,22 @@
-/artifacts
 /publish
 /vendor
 node_modules
-.idea
 *.log
 *.local.js
 
-# Allow symlinked local packages - always use latest commit on composer/npm/yarn update
+# Ignore lock files to allow any package manager
+bun.lockb
 composer.lock
 package-lock.json
 yarn.lock
-bun.lockb
+
+# Testing
+/.phpunit.cache
+/.wp-env.override.json
+/artifacts
+/coverage
+/test-results
+/wordpress-develop
+
+*.swp
+.idea

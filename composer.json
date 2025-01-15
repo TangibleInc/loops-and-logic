@@ -2,10 +2,20 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "git@github.com:tangibleinc/template-system"
+      "url": "git@github.com:tangibleinc/fields.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:tangibleinc/framework.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:tangibleinc/template-system.git"
     }
   ],
   "require": {
+    "tangible/fields": "dev-main",
+    "tangible/framework": "dev-main",
     "tangible/template-system": "dev-main"
   },
   "require-dev": {},

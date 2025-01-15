@@ -27,6 +27,7 @@ export default {
       'readme.txt',
       'assets/**',
       'includes/**',
+      'vendor/tangible/**'
     ],
     exclude: [
     ],
@@ -44,21 +45,22 @@ export default {
    */
   install: [
     // Modules
-    // {
-    //   git: 'git@github.com:tangibleinc/fields',
-    //   dest: 'vendor/tangible/fields',
-    //   branch: 'main',
-    // },
-    // {
-    //   git: 'git@github.com:tangibleinc/framework',
-    //   dest: 'vendor/tangible/framework',
-    //   branch: 'main',
-    // },
+    {
+      git: 'git@github.com:tangibleinc/fields',
+      dest: 'vendor/tangible/fields',
+      branch: 'main',
+    },
+    {
+      git: 'git@github.com:tangibleinc/framework',
+      dest: 'vendor/tangible/framework',
+      branch: 'main',
+    },
     {
       git: 'git@github.com:tangibleinc/template-system',
       dest: 'vendor/tangible/template-system',
       branch: 'main',
     },
+    // No updater for release in wp.org
     // {
     //   git: 'git@github.com:tangibleinc/updater',
     //   dest: 'vendor/tangible/updater',
