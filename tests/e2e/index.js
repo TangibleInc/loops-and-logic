@@ -1,9 +1,9 @@
-import { describe, test, expect } from '../../vendor/tangible/template-system/framework/playwright/index.js'
+import { describe, test, expect } from '@tangible/env/playwright'
 
 /**
- * Tests to exercise the frontend and admin features of the Template System.
+ * Tests to exercise the frontend and admin features of Tangible Blocks.
  *
- * To interact with pages, locate elements by user-visible locators like
+ * Note: To interact with pages, locate elements by user-visible locators like
  * accessible role, instead of CSS selectors which can change.
  *
  * @see https://playwright.dev/docs/locators#locating-elements
@@ -22,17 +22,13 @@ describe('Admin', () => {
   })
 
   const plugins = [
-    ['Loops & Logic', 'tangible-loops-and-logic/tangible-loops-and-logic'],
-    ['E2E', 'e2e-plugin/index'],
-
-    ['Advanced Custom Fields', 'advanced-custom-fields/acf'],
+    ['Tangible Loops & Logic', 'tangible-loops-and-logic/tangible-loops-and-logic'],
+    ['Tangible E2E', 'tangible-e2e-plugin/index'],
     ['Elementor', 'elementor/elementor'],
     ['Beaver Builder', 'beaver-builder-lite-version/fl-builder'],
-    // ['WP Fusion Lite', 'wp-fusion-lite/wp-fusion-lite']
   ]
 
   for (const [pluginTitle, pluginBasename] of plugins) {
-
     test(`${pluginTitle} installed`, async ({ admin, page, requestUtils }) => {
       await admin.visitAdminPage('/')
 
@@ -41,66 +37,42 @@ describe('Admin', () => {
       // })
       // expect(plugins).toContain(pluginBasename)
       // console.log('plugins', plugins)
-      try {
-        const result = await requestUtils.rest({
-          path: `wp/v2/plugins/${pluginBasename}`,
-        })
-        // console.log('plugin', result)
 
-        expect(result.plugin).toBe(pluginBasename)
-      } catch (e) {
-        if (e.code === 'rest_plugin_not_found') {
-          console.log(`Optional plugin ${pluginTitle} is not installed`)
-        } else {
-          console.error(e)
-        }
-      }
+      const result = await requestUtils.rest({
+        path: `wp/v2/plugins/${pluginBasename}`,
+      })
+      // console.log('plugin', result)
+
+      expect(result.plugin).toBe(pluginBasename)
     })
 
-    test(`Activate ${pluginTitle}`, async ({
-      admin,
-      page,
-      request,
-      requestUtils,
-    }) => {
+    test(`Activate ${pluginTitle}`, async ({ admin, page, request, requestUtils }) => {
       await admin.visitAdminPage('plugins.php')
 
       // See if plugin is active or not
-      const pluginClasses = await page.evaluate(
-        ({ pluginBasename }) => {
-          const $row = document.querySelector(
-            `[data-plugin="${pluginBasename}.php"]`,
-          )
-          if (!$row) return []
-          return [...$row?.classList]
-        },
-        { pluginBasename },
-      )
-
-      if (pluginTitle !== 'Template System' && !pluginClasses.length) {
-        return
-      }
+      const pluginClasses = await page.evaluate(({ pluginBasename }) => {
+        const $row = document.querySelector(
+          `[data-plugin="${pluginBasename}.php"]`
+        )
+        return [...$row.classList]
+      }, { pluginBasename })
 
       if (!pluginClasses.includes('active')) {
         await expect(pluginClasses).toContain('inactive')
 
         // Find the Activate link
 
-        const activateLink = await page.evaluate(
-          ({ pluginBasename }) => {
-            const $row = document.querySelector(
-              `[data-plugin="${pluginBasename}.php"]`,
-            )
-            const $activate = $row.querySelector('a.edit')
-            return $activate?.href
-          },
-          { pluginBasename },
-        )
+        const activateLink = await page.evaluate(({ pluginBasename }) => {
+          const $row = document.querySelector(
+            `[data-plugin="${pluginBasename}.php"]`
+          )
+          const $activate = $row.querySelector('a.edit')
+          return $activate?.href
+        }, { pluginBasename })
 
         await expect(activateLink).toBeTruthy()
 
         // Make a POST request
-
         await request.post(activateLink)
       }
 
@@ -238,6 +210,5 @@ test('Code editor', async ({ admin, page }) => {
   expect(await page.evaluate(
     () => Boolean(window.Tangible && window.Tangible.TemplateSystem && window.Tangible.TemplateSystem.CodeEditor)
   )).toBe(true)
-
 
 })

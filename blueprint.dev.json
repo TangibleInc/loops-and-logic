@@ -1,18 +1,24 @@
 {
-  "landingPage": "/wp-admin/edit.php?post_type=tangible_template",
+  "landingPage": "/wp-admin/options-general.php?page=tangible-loops-and-logic-settings&dismiss_admin_notice=true",
   "steps": [
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Loops & Logic",
+        "blogdescription": ""
+      }
+    },
     {
       "step": "defineWpConfigConsts",
       "consts": {
-          "WP_DEBUG": true
+        "WP_DEBUG": true
       },
       "method": "rewrite-wp-config"
     },
     {
-			"step": "login",
-			"username": "admin",
-			"password": "password"
-		},
+      "step": "login",
+      "username": "admin"
+    },
     {
       "step": "activatePlugin",
       "pluginPath": "/var/www/html/wp-content/plugins/tangible-e2e-plugin"
