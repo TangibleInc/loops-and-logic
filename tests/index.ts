@@ -35,6 +35,7 @@ export default run(async () => {
     php,
     request,
     wpx,
+    siteUrl,
     documentRoot,
     setSiteTemplate,
     resetSiteTemplate,
@@ -53,5 +54,13 @@ export default run(async () => {
   test('Plugin - Activate', async () => {
     let result = await ensurePlugin({ wpx })
     is(true, result, 'activate plugin')
+  })
+
+  test('Frontend', async () => {
+    let result = await fetch(siteUrl, {
+      method: 'GET',
+    })
+    // console.log(result)
+    is(200, result.status, 'returns status 200 OK')
   })
 })

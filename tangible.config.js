@@ -20,21 +20,37 @@ export default {
   ],
   format: ['**/*.{php,js,json,scss}', '!assets/build'],
   archive: {
-    dest: 'publish/tangible-loops-and-logic.zip',
     root: 'tangible-loops-and-logic',
+    dest: 'publish/tangible-loops-and-logic.zip',
     src: [
       '*.php',
-      'readme.txt',
       'assets/**',
       'includes/**',
-      'vendor/tangible/**'
+      'vendor/tangible/**',
+      'readme.txt'
     ],
     exclude: [
+      'assets/src',
+      'docs',
+      'vendor/tangible/*/vendor',
+      'vendor/tangible-dev/',
+      '**/.git',
+      '**/.github',
+      '**/.idea',
+      '**/artifacts',
+      '**/publish',
+      '**/node_modules',
+      '**/tests',
+      '**/*.scss',
+      '**/*.jsx',
+      '**/*.ts',
+      '**/*.tsx',
     ],
     configs: [
       './vendor/tangible/template-system/tangible.config.js'
     ]
   },
+
   /**
    * Dependencies for production are installed in `vendor/tangible`,
    * included in the zip package to publish. Those for development are

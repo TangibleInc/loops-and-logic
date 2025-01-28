@@ -42,8 +42,8 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.50.0",
-    "@tangible/env": "^2025.1.30",
-    "@tangible/now": "^2.0.3",
+    "@tangible/env": "^2025.1.31",
+    "@tangible/now": "^2.0.4",
     "@tangible/roller": "^2.1.4",
     "@wordpress/e2e-test-utils-playwright": "^1.16.0",
     "@wordpress/env": "^10.16.0",
