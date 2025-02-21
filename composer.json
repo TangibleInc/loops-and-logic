@@ -1,26 +1,9 @@
 {
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:tangibleinc/fields.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:tangibleinc/framework.git"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:tangibleinc/template-system.git"
-    }
-  ],
-  "require": {
-    "tangible/fields": "dev-main",
-    "tangible/framework": "dev-main",
-    "tangible/template-system": "dev-main"
-  },
+  "repositories": [],
+  "require": {},
   "require-dev": {
-    "phpunit/phpunit": "9.6.x-dev",
-    "yoast/phpunit-polyfills": "2.x-dev"
+    "phpunit/phpunit": "^9.6",
+    "yoast/phpunit-polyfills": "^2.0"
   },
   "minimum-stability": "dev"
 }
