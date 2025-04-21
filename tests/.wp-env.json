@@ -1,6 +1,0 @@
-{
-  "extends": "../.wp-env.json",
-  "mappings": {
-    "wp-content/plugins/tangible-loops-and-logic": ".."
-  }
-}

@@ -1,5 +1,5 @@
 import { test, is, ok, run } from 'testra'
-import { getServer } from '@tangible/env'
+import { getServer } from './server.ts'
 
 async function ensurePlugin({ wpx }) {
   return wpx/* php */ `
@@ -43,7 +43,8 @@ export default run(async () => {
     phpVersion: process.env.PHP_VERSION || '8.2',
     mappings: process.env.TEST_ARCHIVE
       ? {
-          'wp-content/plugins/tangible-loops-and-logic': '../publish/tangible-loops-and-logic',
+          'wp-content/plugins/tangible-loops-and-logic':
+            '../../publish/tangible-loops-and-logic',
         }
       : {},
     reset: true,
@@ -54,6 +55,9 @@ export default run(async () => {
   test('Plugin - Activate', async () => {
     let result = await ensurePlugin({ wpx })
     is(true, result, 'activate plugin')
+
+    result = await wpx/* php */ `return function_exists('tangible_template');`
+    is(true, result, 'tangible_template() exists')
   })
 
   test('Frontend', async () => {
@@ -63,4 +67,15 @@ export default run(async () => {
     // console.log(result)
     is(200, result.status, 'returns status 200 OK')
   })
+
+  await import(`../../vendor/tangible/framework/tests/index.ts`)
+
+  for (const key of [
+    'loop',
+    'logic',
+    'language',
+    'admin',
+  ]) {
+    await import(`../../vendor/tangible/template-system/tests/${key}/index.ts`)
+  }
 })

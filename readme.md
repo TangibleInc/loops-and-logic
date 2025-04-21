@@ -43,12 +43,10 @@ npm run format
 Start a local dev site using [`wp-now`](https://github.com/WordPress/playground-tools/blob/trunk/packages/wp-now/README.md).
 
 ```sh
-npm run start
+npm run now
 ```
 
-The default user is `admin` with `password`.
-
-Press CTRL + C to stop.
+The default user is `admin` with `password`. Press CTRL + C to stop.
 
 #### Dev dependencies
 
@@ -85,7 +83,7 @@ This plugin comes with a suite of unit and integration tests.
 The test environment is started by running:
 
 ```sh
-npm run env:start
+npm run start
 ```
 
 This uses [`wp-env`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) to quickly spin up a local dev and test environment, optionally switching between multiple PHP versions. It requires **Docker** to be installed. There are instructions available for installing Docker on [Windows](https://docs.docker.com/desktop/install/windows-install/), [macOS](https://docs.docker.com/desktop/install/mac-install/), and [Linux](https://docs.docker.com/desktop/install/linux-install/).
@@ -95,7 +93,7 @@ Visit [http://localhost:8888](http://localhost:8888) to see the dev site, and [h
 Before running tests, install PHPUnit as a dev dependency using Composer inside the container.
 
 ```sh
-npm run env:composer:install
+npm run composer:install
 ```
 
 Composer will add and remove folders in the `vendor` folder, based on `composer.json` and `composer.lock`. If you have any existing Git repositories, ensure they don't have any work in progress before running the above command.
@@ -103,22 +101,28 @@ Composer will add and remove folders in the `vendor` folder, based on `composer.
 Run the tests:
 
 ```sh
-npm run env:test
+npm run test
 ```
 
 For each PHP version:
 
 ```sh
-npm run env:test:7.4
-npm run env:test:8.2
+npm run test:7.4
+npm run test:8.2
 ```
 
-The version-specific commands take a while to start, but afterwards you can run `npm run env:test` to re-run tests in the same environment.
+The version-specific commands take a while to start, but afterwards you can run `npm run test` to re-run tests in the same environment.
+
+Run tests for all PHP versions and end-to-end tests (see below).
+
+```sh
+npm run test:all
+```
 
 To stop the Docker process:
 
 ```sh
-npm run env:stop
+npm run stop
 ```
 
 To remove Docker containers, volumes, images associated with the test environment.
