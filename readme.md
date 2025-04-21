@@ -2,6 +2,10 @@
 
 All plugin features have been moved into the [Template System module](https://github.com/tangibleinc/template-system).
 
+Website: https://loopsandlogic.com/
+
+Documentation: https://docs.loopsandlogic.com/
+
 Source code: https://github.com/tangibleinc/loops-and-logic
 
 ## Develop

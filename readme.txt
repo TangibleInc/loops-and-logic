@@ -1,7 +1,7 @@
 === Loops & Logic ===
-Stable tag: 4.2.0
+Stable tag: 4.2.1
 Requires at least: 6.0
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -151,148 +151,25 @@ Everything will work with themes built according to WordPress standards.
 
 == Changelog ==
 
-= 4.2.0 =
+= 4.2.1 =
 
-Release Date: 2025-01-28
+Release Date: 2025-04-21
 
+- Atomic CSS: Utility classes and variables compatible with Tailwind v4
+- Attachment loop type
+  - Add field "audio" for audio file metadata from ID3 tags
+  - Add field "filepath" for path to file
+- Editor: Improve passing language definition of closed tags to formatter
+- Elandel (template language in TypeScript): Start Expression and Interactivity modules
+- Enable by default new features that reached stability; Can be deactivated in settings page
+  - Elementor integration: Use new code editor based on CodeMirror 6
+  - Object cache for parsed and pre-processed templates
+- Export page: Improve select template types for L&L and Blocks
+- Field tag: Support "." dot syntax for subfields (object/array/loop)
+- Gutenberg integration: Improve enqueue editor assets in iframe
 - Improve compatibility with PHP 8.4
-- Improve develop/build/test setup and workflow for plugin and modules
+- Improve development setup and tests for supported PHP versions with Docker and wp-env; end-to-end tests with Playwright; and running tests on plugin zip archive before publish
+- Layout template type: Improve loading logic to pass through redirects
 - REST API: Improve compatibility with Checkview
-
-= 4.1.7 =
-
-Release Date: 2024-11-21
-
-- Fix Gutenberg enqueue inside editor iframe: Register Template block dependencies
-  - [Block Editor: Enqueueing Assets in the Editor](https://developer.wordpress.org/block-editor/how-to-guides/enqueueing-assets-in-the-editor/#backward-compatibility-and-known-issues)
-- Optional object cache for parsed and preprocessed template posts; See admin settings
-
-= 4.1.5 =
-
-Release Date: 2024-08-31
-
-- Fix XSS vulnerability when visiting admin settings page URL
-
-= 4.1.4 =
-
-Release Date: 2024-06-13
-
-- Editor and language integration
-  - New HTML and CSS engines, linter, formatter
-  - Organize general-purpose editor and template language features independent of WordPress
-- Improve plugin zip package build/test/release workflow
-  - File size ~42% smaller
-  - Remove source maps for production
-- Improve support for SQLite database integration
-- Logic module: Build and evaluate conditional rules for frontend (TypeScript) and backend (PHP)
-  - Tags: Logic, Rule, All, Any, Not
-  - Integrate with If tag using attribute "logic"
-- Pager module: Start new foundation for more modular pagination features
-  - Tags: Pager, PagerButtons, PagerFields, PagerLoading
-  - Support loop ID
-  - First/last, previous/next actions
-  - Multiple button groups and fields before/after loop
-- Post loop: Get loop context in taxonomy archive to return current taxonomy and term
-- Start features in progress (alpha)
-  - Content: Template type for content structure templates
-  - Views: Unified interface to edit and manage all template types (layouts, scripts, styles, assets, libraries)
-- Table module
-  - Fix error with method enqueue_table
-  - Fix warning when sorting value is null instead of string
-- Test environment with [wp-now](https://github.com/WordPress/playground-tools/tree/trunk/packages/wp-now)
-  - Tests for supported PHP versions
-  - End-to-end tests with Chromium
-  - Verify plugin zip package
-
-= 4.1.3 =
-
-Release Date: 2024-03-22
-
-- ACF Date/Time field: Add tests for field comparison with timestamps
-- Base loop: Improve casting query parameter to array when non-string value is passed
-- Beaver integration: Ensure Template module restores current post in context
-- Taxonomy term loop: Handle case when include/exclude is given as integer ID
-- Template save and format slugify: Use remove_accents() to convert all accent characters to ASCII characters, before creating slug with sanitize_title_with_dashes()
-
-= 4.1.2 =
-
-Release Date: 2024-03-15
-
-- ACF integration
-  - Date field types: Ensure unformatted value is passed to date conditions
-  - Group, Flexible Content, Repeater: Correctly set up subfield loop after change to List loop type to support extended parameters such as offset/count/sort/filter
-- Post loop: Handle case when extended query parameter for post/user/category/tag slug is not array
-- Sass module: Revert to SCSS-PHP 1.11.1 to keep compatibility with PHP 7.4
-- Taxonomy term loop: Correctly pass post object IDs to query
-
-= 4.1.0 =
-
-Release Date: 2024-03-12
-
-- ACF integration
-  - **Breaking change**: Date field types now get their default formatting from the field setting for Return Format. Previously the defaults were from site setting (Date field), "Y-m-d H:i:s" (Date/Time), and "H:i:s" (Time). Now they use the selected format in each field's settings, or ACF's default return format: "d/m/Y" (Date), "d/m/Y g:i a" (Date/Time), and "g:i a" (Time).
-  - Improve handling of "format" and "locale" attributes
-- Editor
-  - Formatter
-    - Add keyboard shortcuts to support formatting by entire document or selected lines
-    - Start a fork of Prettier HTML formatter to customize based on template language definition
-  - Linter: Improve HTML linter rule for unique ID so it applies only to static tags
-  - Update CodeMirror modules and Prettier
-- HTML module
-  - Add comprehensive HTML test suite with test files from Parse5, Prettier, and Unified
-  - Refactor to improve performance: ~3% faster
-- Loop types
-  - Consolidate everywhere that accepts a list to support comma-separated list and JSON array
-  - Improve sort by field using "field_compare" 
-  - List, Map, Map Keys: Support query parameters for base loop, such as offset, count, sort, filter, pagination
-    - List: Use field name "value", like "sort_field=value"
-    - Map keys: Use field name "key" or "value". Keep default order of keys as defined, unless "sort_field=key" is applied - previously was sorted alphabetically.
-- Gutenberg integration: Template block: Remember previously selected template when switching tabs
-- Sass module: Upgrade Sass compiler (scssphp) to 1.12.1, and CodeMirror Sass language support
-- Taxonomy term loop: Ensure "post" attribute accepts list variable
-- Template post types: Ensure templates always have a universal ID assigned, during post save and before exporting. This improves how duplicate templates are handled during import.
-- Template tag/shortcode: Ensure no post matches if attribute "name" is an empty string - See [WP_Query matches *any* post when query parameter "name" is an empty string](https://core.trac.wordpress.org/ticket/60468)
-
-= 4.0.2 =
-
-Release Date: 2024-01-18
-
-- ACF integration: For relational fields, apply loop query parameters such as sort, order, paged, and exclude
-- Editor: Change key map to expand Emmet abbreviation to Shift+TAB, to prevent conflict with TAB to select autocomplete suggestion
-- Framework: Improve plugin settings page styles
-- Paginator: Improve how AJAX script is loaded
-- Post loop: Support use of `exclude` and `include` together, which is not natively supported by WP_Query
-
-= 4.0.1 =
-
-Release Date: 2024-01-04
-
-- Fix issues related to code reorganization: Mobile Detect and WP Fusion; Add integration tests to ensure no regression
-
-= 4.0.0 =
-
-Release Date: 2024-01-03
-
-- [Documentation](https://docs.loopsandlogic.com/reference/template-system): Reference pages for developers and contributors, with technical details of how the codebase is organized.
-- [Editor](https://docs.loopsandlogic.com/reference/template-system/editor/): New code editor based on CodeMirror 6 is enabled by default for template post types, Gutenberg, and ACF Template field. The old editor is still used for Elementor and Beaver Builder until integration is complete.
-- Framework and Modules: Features have been organized into modules which can be independently built, documented, tested, and optionally published. This replaces the previous Plugin Framework and Interface module.
-- [GitHub repository](https://github.com/tangibleinc/template-system): New home of the Template System source code and project, with better developer experience and social collaboration. Welcome to start new issues, pull requests, and discussions.
-- Testing: Improve coverage of unit tests, and prepare foundation for end-to-end tests with headless browser and WordPress environment in Docker. This is an on-going effort to exercise and verify all features of the plugin.
-
-Other improvements:
-
-- ACF integration: Add Field tag attribute "acf_textarea" to apply formatting based on field settings
-- Archive screen: Add bulk action to move selected posts to trash
-- Assets edit screen: Improve documentation
-- Atomic CSS: Generate CSS utility classes on demand.
-  Similar to Tailwind, this feature uses a style engine called [UnoCSS](https://unocss.dev/) to generate CSS rules from utility classes found in an HTML template, every time it is saved. On the frontend, the generated styles are minified together, removing any redundant rules. Enable in plugin settings.
-- Edit screen: Add Preview pane with auto-refresh
-- Editor: Hyperlink extension - Add clickable link icon next to a valid URL; Improve color picker
-- Import/Export
-  - Add export rule to include/exclude template categories
-  - Update PNG Compressor with better support for Firefox
-  - Use compressed format (PNG) by default
-- Show admin menu, edit screens, and template editor (Gutenberg, Elementor, Beaver) only to admins with `unfiltered_html` capability. On multisite installs, by default only network admins have this capability, not subsite admins.
-- Update included libraries
-  - HJSON, Select2, Chart.js, Mermaid, ..
-  - Prism: Update library to 1.29.0 - Replace Clipboard.js with browser-native `navigator.clipboard`
+- Start new features: Content Structure and Form templates; ACF Extended integration; Tangible Fields integration
+- WP Grid Builder facet integration with support for pagination; Thanks to @zackpyle!
