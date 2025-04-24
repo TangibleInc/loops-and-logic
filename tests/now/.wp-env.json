@@ -1,3 +1,6 @@
 {
-  "extends": "../../.wp-env.json"
+  "extends": "../../.wp-env.json",
+  "mappings": {
+    "wp-content/plugins/tangible-framework-test-plugin": "../../vendor/tangible/framework/tests/now"
+  }
 }

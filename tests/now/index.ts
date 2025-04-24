@@ -10,6 +10,9 @@ if (!function_exists('tangible_template')) {
   }
   $result = activate_plugin(ABSPATH . 'wp-content/plugins/tangible-loops-and-logic/tangible-loops-and-logic.php');
   if (is_wp_error($result)) return $result;
+
+  // Framework test plugin
+  $result = activate_plugin(ABSPATH . 'wp-content/plugins/tangible-framework-test-plugin/index.php');
 }
 
 if ( !get_option('site_init_done') ) {
@@ -68,7 +71,7 @@ export default run(async () => {
     is(200, result.status, 'returns status 200 OK')
   })
 
-  await import(`../../vendor/tangible/framework/tests/index.ts`)
+  await import(`../../vendor/tangible/framework/tests/now/index.ts`)
 
   for (const key of [
     'loop',
