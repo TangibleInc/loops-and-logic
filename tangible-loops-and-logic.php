@@ -3,14 +3,14 @@
  * Plugin Name: Tangible: Loops & Logic
  * Plugin URI: https://loopsandlogic.com/
  * Description: A template system with content type loops and conditions.
- * Version: 4.2.2
+ * Version: 4.2.3
  * GitHub URI: TangibleInc/loops-and-logic
  * Author: Team Tangible
  * Author URI: https://teamtangible.com
  * License: GPLv2 or later
  */
 
-define( 'TANGIBLE_LOOPS_AND_LOGIC_VERSION', '4.2.2' );
+define( 'TANGIBLE_LOOPS_AND_LOGIC_VERSION', '4.2.3' );
 
 $module_path = is_dir(
   ($path = __DIR__ . '/../../tangible') // Module
@@ -29,6 +29,9 @@ function tangible_loops_and_logic($instance = false) {
 }
 
 add_action('plugins_loaded', function() {
+
+  // See https://github.com/TangibleInc/framework/#note-on-plugin-activation
+  if (defined('WP_SANDBOX_SCRAPING')) return;
 
   $plugin    = tangible\framework\register_plugin([
     'name'           => 'tangible-loops-and-logic',

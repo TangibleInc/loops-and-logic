@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 4.2.2
+Stable tag: 4.2.3
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -150,6 +150,14 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.2.3 =
+
+Release Date: 2025-06-11
+
+- ACF Repeater: Improve support for sort/filter by field
+  - Translate internal keys used by ACF to actual field names
+  - For field value comparison, ACF Date field is in format "Y-m-d" and DateTime field is "Y-m-d H:i:s"
 
 = 4.2.2 =
 
