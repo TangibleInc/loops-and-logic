@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 4.2.3
+Stable tag: 4.2.4
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -150,6 +150,17 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.2.4 =
+
+Release Date: 2026-06-08
+
+- Editor: Save - Add missing capability check in the AJAX action
+- FieldGroup tag: Start support of ACF and Tangible Fields
+- Form:
+  - Capture any unexpected output while processing form
+  - Correct enqueue path
+- WP Grid Builder: Improve facet integration with support for User Queries; Thanks to @zackpyle!
 
 = 4.2.3 =
 
