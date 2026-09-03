@@ -1,5 +1,5 @@
 === Loops & Logic ===
-Stable tag: 4.2.4
+Stable tag: 4.3.0
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -150,6 +150,24 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.3.0 =
+
+Release Date: 2026-09-03
+
+- ACF Group loop: Support group field values returned as arrays
+- Field tag: Fix field=label and other ACF choice-field subfields
+- Format tag: Ignore non-numeric length/offset values instead of a fatal error
+- Loops: Improve post and user query performance by reducing database requests
+- PaginateButtons tag: Fix scroll_top and scroll_animate attributes
+- Performance: New optional feature to compile L&L templates to PHP for faster rendering (requires opcache)
+- Security:
+  - Table: Validate requests with a signed hash (CVE-2026-16960 - Thanks Philipp Doblhofer for the report!)
+  - Sortable post types: Restrict ajax action to admin users
+- Development:
+  - Tests: E2E - Cover AJAX permissions with tests
+  - Tests: Run existing tests on PHP 8.4 as well
+  - Workflows: Extend tests support
 
 = 4.2.4 =
 
