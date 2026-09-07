@@ -1,7 +1,7 @@
 === Loops & Logic ===
 Stable tag: 4.3.0
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
