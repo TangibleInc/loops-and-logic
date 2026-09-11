@@ -10,15 +10,17 @@
  * License: GPLv2 or later
  */
 
+defined( 'ABSPATH' ) or die();
+
 define( 'TANGIBLE_LOOPS_AND_LOGIC_VERSION', '4.3.0' );
 
-$module_path = is_dir(
-  ($path = __DIR__ . '/../../tangible') // Module
-) ? $path : __DIR__ . '/vendor/tangible'; // Plugin
+$tangible_loops_and_logic_path = is_dir( __DIR__ . '/../../tangible' )
+  ? __DIR__ . '/../../tangible' // Module
+  : __DIR__ . '/vendor/tangible'; // Plugin
 
-require_once $module_path . '/framework/index.php';
-require_once $module_path . '/template-system/index.php';
-require_once $module_path . '/fields/index.php';
+require_once $tangible_loops_and_logic_path . '/framework/index.php';
+require_once $tangible_loops_and_logic_path . '/template-system/index.php';
+require_once $tangible_loops_and_logic_path . '/fields/index.php';
 
 /**
  * Get plugin instance

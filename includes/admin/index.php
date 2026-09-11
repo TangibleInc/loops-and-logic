@@ -1,6 +1,8 @@
 <?php
 use tangible\framework;
 
+defined('ABSPATH') or die();
+
 require_once __DIR__.'/admin-notice.php';
 
 framework\register_plugin_settings($plugin, [
@@ -8,11 +10,11 @@ framework\register_plugin_settings($plugin, [
   'title_callback' => function() use ($plugin) {
     ?>
       <img class="plugin-logo"
-        src="<?php echo $plugin->assets_url; ?>/images/loops-and-logic-logo.png"
+        src="<?php echo esc_url( $plugin->assets_url ); ?>/images/loops-and-logic-logo.png"
         alt="Loops & Logic Logo"
         width="40"
       >
-      <?php echo $plugin->title; ?>
+      <?php echo esc_html( $plugin->title ); ?>
     <?php
   },
   'tabs' => [

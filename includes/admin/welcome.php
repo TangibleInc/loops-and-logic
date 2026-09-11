@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or die();
+
 return function() use ($plugin) {
 
   ?>
@@ -12,7 +14,7 @@ return function() use ($plugin) {
   <hr>
 
   <p>In the admin sidebar menu <b>Tangible</b>, there is a list of template types and actions.</p>
-  <p>Use the <a href="<?php echo admin_url('edit.php?post_type=tangible_template'); ?>">template post type</a> to manage reusable HTML templates.</p>
+  <p>Use the <a href="<?php echo esc_url( admin_url('edit.php?post_type=tangible_template') ); ?>">template post type</a> to manage reusable HTML templates.</p>
 
   <hr>
   <p>A <b>Tangible Template</b> module is included for the following builders:
