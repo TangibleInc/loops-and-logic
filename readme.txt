@@ -1,5 +1,5 @@
 === Tangible: Loops & Logic ===
-Stable tag: 4.3.3
+Stable tag: 4.3.4
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
@@ -150,6 +150,18 @@ Everything will work with themes built according to WordPress standards.
 
 
 == Changelog ==
+
+= 4.3.4 =
+
+Release Date: 2026-11-26
+
+- Improve PHP 8.5 and 8.6 compatibility
+- Security:
+  - Render: Improve escaping of JSON values
+  - Ajax: Pagination - Sanitize page attribute (CVE-2026-120476)
+  - Form: Create - Improve sanitization for array values (CVE-2026-118234)
+- Development:
+  - Tests: Run existing tests on PHP 8.6 as well
 
 = 4.3.3 =
 
